@@ -20,10 +20,38 @@ int m = int.Parse(Console.ReadLine());
 
 string [] mass = new  string[m];
 
-for (int j = 0; j < m; j++)
+for (int j = 0; j < mass.Length; j++)
 {
     Console.WriteLine($"Введите строку {j+1} из любых символов (лучше не больше 4 символов): ");
     mass[j] = Console.ReadLine();
 }
 Console.WriteLine("Исходный массив строк: ");
 Print(mass);
+Console.WriteLine();
+
+
+int t = 0; // счетчик для определения размера нового массива
+int s = 3;  // максимальное количество символов в строке исходного массива, чтобы эта строка попала в новый массив
+
+for (int j = 0; j < mass.Length; j++)
+{
+    if (mass[j].Length <= s)
+    {
+        t++;
+    }
+}
+Console.WriteLine("Размер нового массива (= количество строк): " + t);
+
+string [] second = new  string[t];
+int r = 0;
+
+for (int j = 0; j < mass.Length; j++)
+{
+    if (mass[j].Length <= s)
+    {
+        second[r] = mass[j];
+        r ++;
+    }
+}
+Console.WriteLine("Новый массив строк: ");
+Print(second);

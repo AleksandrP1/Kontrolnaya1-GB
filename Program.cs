@@ -6,3 +6,24 @@
 // ["hello", "2", "world", ":-)"] -> ["2", ":-)"]
 // ["1234", "1567", "-2", "computer science"] -> ["-2"]
 // ["Russia", "Denmark", "Kazan"] -> []
+
+void Print(string[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+    Console.WriteLine(array[i]);
+    }
+}
+
+Console.WriteLine("Введите число строк в массиве: ");
+int m = int.Parse(Console.ReadLine());
+
+string [] mass = new  string[m];
+
+for (int j = 0; j < m; j++)
+{
+    Console.WriteLine($"Введите строку {j+1} из любых символов (лучше не больше 4 символов): ");
+    mass[j] = Console.ReadLine();
+}
+Console.WriteLine("Исходный массив строк: ");
+Print(mass);
